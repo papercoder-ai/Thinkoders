@@ -1,7 +1,7 @@
 # Edge Function Verification Report
 **Date**: December 6, 2025  
 **Project**: WhatsApp Attendance System  
-**Supabase Project ID**: erajpucpsqxbqxfttzuc
+**Supabase Project ID**: your-project-ref
 
 ---
 
@@ -95,7 +95,7 @@ WHATSAPP_WEBHOOK_VERIFY_TOKEN | 2dbe3b03f4792924243a1f084a835759
 
 **Test 1: Webhook Verification (GET Request)**
 ```powershell
-Invoke-WebRequest -Uri "https://erajpucpsqxbqxfttzuc.supabase.co/functions/v1/whatsapp-webhook?hub.mode=subscribe&hub.challenge=test123&hub.verify_token=9133603383"
+Invoke-WebRequest -Uri "https://your-project-ref.supabase.co/functions/v1/whatsapp-webhook?hub.mode=subscribe&hub.challenge=test123&hub.verify_token=your_verify_token"
 ```
 
 **Result:**
@@ -154,8 +154,8 @@ supabase/functions/
 ### Required Actions Before Production:
 
 1. **Configure WhatsApp Webhook in Meta Developer Console**
-   - URL: `https://erajpucpsqxbqxfttzuc.supabase.co/functions/v1/whatsapp-webhook`
-   - Verify Token: `9133603383`
+   - URL: `https://your-project-ref.supabase.co/functions/v1/whatsapp-webhook`
+   - Verify Token: `your_verify_token`
    - Subscribe to: `messages` webhook field
 
 2. **Register Faculty Members**

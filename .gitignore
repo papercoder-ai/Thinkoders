@@ -1,0 +1,6 @@
+# Root workspace environment files
+.env
+.env.local
+
+# Root-level package installs (if ever used)
+node_modules/

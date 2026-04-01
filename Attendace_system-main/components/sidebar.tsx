@@ -17,6 +17,7 @@ import {
   GraduationCap,
   BookOpen,
   ClipboardList,
+  CalendarDays,
   Settings,
   LogOut,
   UserCheck,
@@ -43,12 +44,16 @@ const navItemsByRole: Record<UserRole, NavItem[]> = {
     { title: "Faculty", href: "/admin/faculty", icon: GraduationCap },
     { title: "All Classes", href: "/admin/classes", icon: School },
     { title: "Attendance Reports", href: "/admin/reports", icon: BarChart3 },
+    { title: "Leave Module", href: "/leave", icon: CalendarDays },
+    { title: "Leave Requests", href: "/leave/requests", icon: ClipboardList },
   ],
   hod: [
     { title: "Dashboard", href: "/hod", icon: LayoutDashboard },
     { title: "Faculty", href: "/hod/faculty", icon: GraduationCap },
     { title: "Classes", href: "/hod/classes", icon: School },
     { title: "Reports", href: "/hod/reports", icon: BarChart3 },
+    { title: "Leave Module", href: "/leave", icon: CalendarDays },
+    { title: "Leave Requests", href: "/leave/requests", icon: ClipboardList },
   ],
   faculty: [
     { title: "Dashboard", href: "/faculty", icon: LayoutDashboard },
@@ -56,6 +61,8 @@ const navItemsByRole: Record<UserRole, NavItem[]> = {
     { title: "Students", href: "/faculty/students", icon: Users },
     { title: "Attendance", href: "/faculty/attendance", icon: ClipboardList },
     { title: "WhatsApp Commands", href: "/faculty/commands", icon: MessageSquare },
+    { title: "Leave Module", href: "/leave", icon: CalendarDays },
+    { title: "Leave Requests", href: "/leave/requests", icon: ClipboardList },
   ],
   student: [
     { title: "Dashboard", href: "/student", icon: LayoutDashboard },

@@ -9,7 +9,7 @@ Your WhatsApp Attendance System Edge Function has been successfully deployed!
 ## 📍 **Webhook URL**
 
 ```
-https://erajpucpsqxbqxfttzuc.supabase.co/functions/v1/whatsapp-webhook
+https://your-project-ref.supabase.co/functions/v1/whatsapp-webhook
 ```
 
 ---
@@ -36,7 +36,7 @@ All required secrets have been set:
 - **Function Name:** whatsapp-webhook
 - **Status:** ACTIVE ✅
 - **Version:** 5
-- **Project ID:** erajpucpsqxbqxfttzuc
+- **Project ID:** your-project-ref
 - **Last Updated:** 2025-12-06 10:27:25 UTC
 
 ---
@@ -58,12 +58,12 @@ Set these values:
 
 **Callback URL:**
 ```
-https://erajpucpsqxbqxfttzuc.supabase.co/functions/v1/whatsapp-webhook
+https://your-project-ref.supabase.co/functions/v1/whatsapp-webhook
 ```
 
 **Verify Token:**
 ```
-9133603383
+your_verify_token
 ```
 
 ### Step 4: Subscribe to Webhook Fields
@@ -82,7 +82,7 @@ Click **"Verify and Save"** button. You should see a green checkmark ✅
 ### Test Webhook Verification
 
 ```bash
-curl "https://erajpucpsqxbqxfttzuc.supabase.co/functions/v1/whatsapp-webhook?hub.mode=subscribe&hub.verify_token=9133603383&hub.challenge=test_challenge"
+curl "https://your-project-ref.supabase.co/functions/v1/whatsapp-webhook?hub.mode=subscribe&hub.verify_token=your_verify_token&hub.challenge=test_challenge"
 ```
 
 **Expected Response:** `test_challenge`
@@ -105,11 +105,11 @@ npx supabase functions logs whatsapp-webhook
 ```
 
 **Dashboard:**
-[https://supabase.com/dashboard/project/erajpucpsqxbqxfttzuc/functions/whatsapp-webhook/logs](https://supabase.com/dashboard/project/erajpucpsqxbqxfttzuc/functions/whatsapp-webhook/logs)
+[https://supabase.com/dashboard/project/your-project-ref/functions/whatsapp-webhook/logs](https://supabase.com/dashboard/project/your-project-ref/functions/whatsapp-webhook/logs)
 
 ### View Function Metrics
 
-Dashboard: [https://supabase.com/dashboard/project/erajpucpsqxbqxfttzuc/functions](https://supabase.com/dashboard/project/erajpucpsqxbqxfttzuc/functions)
+Dashboard: [https://supabase.com/dashboard/project/your-project-ref/functions](https://supabase.com/dashboard/project/your-project-ref/functions)
 
 ---
 
@@ -142,9 +142,9 @@ Your edge function now handles these routes:
 ## ✅ **Pre-Configured Settings**
 
 ### Your Configuration
-- **Project:** erajpucpsqxbqxfttzuc
-- **WhatsApp Phone:** 912335575294429
-- **Verify Token:** 9133603383
+- **Project:** your-project-ref
+- **WhatsApp Phone:** your_phone_number_id
+- **Verify Token:** your_verify_token
 - **Gemini AI:** Configured ✅
 
 ---
@@ -155,7 +155,7 @@ Your edge function now handles these routes:
 
 **Check:**
 1. Webhook URL configured correctly in Meta Console
-2. Verify token matches: `9133603383`
+2. Verify token matches: `your_verify_token`
 3. Function logs: `npx supabase functions logs whatsapp-webhook`
 4. WhatsApp test number added in Meta Console
 
@@ -177,7 +177,7 @@ Your edge function now handles these routes:
 
 ## 📞 **Support Links**
 
-- **Supabase Dashboard:** [https://supabase.com/dashboard/project/erajpucpsqxbqxfttzuc](https://supabase.com/dashboard/project/erajpucpsqxbqxfttzuc)
+- **Supabase Dashboard:** [https://supabase.com/dashboard/project/your-project-ref](https://supabase.com/dashboard/project/your-project-ref)
 - **Meta Developer Console:** [https://developers.facebook.com/](https://developers.facebook.com/)
 - **Google AI Studio:** [https://makersuite.google.com/](https://makersuite.google.com/)
 

@@ -1,0 +1,25 @@
+{
+  "name": "attendance-leaveflow-unified-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Root-level unified workspace for Attendance + LeaveFlow integration",
+  "scripts": {
+    "sync:common": "node scripts/sync-common-files.mjs",
+    "install:attendance": "npm --prefix Attendace_system-main install",
+    "install:leaveflow:backend": "python -m pip install -r LeaveFlow-main/backend/requirements.txt",
+    "install:leaveflow:dashboard": "npm --prefix LeaveFlow-main/dashboard install",
+    "install:all": "npm run install:attendance && npm run install:leaveflow:dashboard && npm run install:leaveflow:backend",
+    "dev:attendance": "npm run sync:common && npm --prefix Attendace_system-main run dev",
+    "dev:leaveflow:backend": "cd LeaveFlow-main/backend && python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000",
+    "dev:leaveflow:dashboard": "npm --prefix LeaveFlow-main/dashboard run dev",
+    "dev:unified": "node scripts/dev-unified.mjs",
+    "dev:unified:full": "node scripts/dev-unified.mjs --with-dashboard",
+    "dev": "npm run dev:attendance",
+    "build": "npm run sync:common && npm --prefix Attendace_system-main run build",
+    "lint": "npm run sync:common && npm --prefix Attendace_system-main run lint",
+    "seed:admin": "npm run sync:common && npm --prefix Attendace_system-main run seed:admin"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

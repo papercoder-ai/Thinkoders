@@ -12,7 +12,6 @@ This is the root-level source of truth for common integration files.
 ## Root Common Files
 
 - `leave-domain-common.ts`
-- `leaveflow-proxy-common.ts`
 - `leave-module-page.tsx`
 - `.env.example`
 - `package.json`

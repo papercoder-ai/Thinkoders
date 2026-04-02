@@ -9,10 +9,6 @@ const copies = [
     to: path.join(root, "Attendace_system-main", "lib", "leave-domain-common.ts"),
   },
   {
-    from: path.join(root, "leaveflow-proxy-common.ts"),
-    to: path.join(root, "Attendace_system-main", "lib", "leaveflow-proxy-common.ts"),
-  },
-  {
     from: path.join(root, "leave-module-page.tsx"),
     to: path.join(root, "Attendace_system-main", "lib", "leave-module-shared.ts"),
   },

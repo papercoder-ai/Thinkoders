@@ -4,7 +4,6 @@ export async function GET() {
   const admin = createAdminClient()
   let dbReady = true
   let dbError: string | null = null
-  const fallbackProxyConfigured = Boolean((globalThis as { process?: { env?: Record<string, string | undefined> } }).process?.env?.LEAVEFLOW_API_URL)
 
   try {
     const { error } = await admin.from("leave_requests").select("id", { head: true, count: "exact" }).limit(1)
@@ -21,9 +20,13 @@ export async function GET() {
     status: "ok",
     module: "leave-native",
     backend: "attendance-next-api",
+    architecture: {
+      frontend: "attendance-nextjs",
+      backend: "attendance-next-api",
+      database: "supabase-postgres",
+    },
     dbReady,
     dbError,
-    fallbackProxyConfigured,
     timestamp: new Date().toISOString(),
   })
 }

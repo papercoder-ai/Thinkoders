@@ -28,13 +28,13 @@ export default async function LeaveModulePage() {
 								<CalendarDays className="h-5 w-5" />
 								{LEAVE_MODULE_OVERVIEW.title}
 							</CardTitle>
-							<Badge variant="secondary">Phase 1</Badge>
+							<Badge variant="secondary">Unified</Badge>
 						</div>
 						<CardDescription>{LEAVE_MODULE_OVERVIEW.subtitle}</CardDescription>
 					</CardHeader>
 					<CardContent className="space-y-4 text-sm text-muted-foreground">
 						<p>
-							This page confirms the first integration slice is active. Leave endpoints are available via
+							This page confirms unified leave mode is active. Leave endpoints are served natively via
 							<span className="font-medium text-foreground"> /api/leave/*</span> and can be consumed by unified UI screens.
 						</p>
 						<div className="grid gap-3 md:grid-cols-2">

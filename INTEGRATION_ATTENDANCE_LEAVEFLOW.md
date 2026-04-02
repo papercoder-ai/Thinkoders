@@ -2,6 +2,13 @@
 
 This is the root-level source of truth for common integration files.
 
+## Architecture Status
+
+- Frontend: one (`Attendace_system-main`, Next.js)
+- Backend: one (`Attendace_system-main` Next.js API routes)
+- Database: one (Supabase PostgreSQL)
+- Legacy LeaveFlow backend is optional and no longer required for core leave flow.
+
 ## Root Common Files
 
 - `leave-domain-common.ts`
@@ -26,9 +33,9 @@ To keep root as source-of-truth while preserving build reliability:
 - Install LeaveFlow dashboard deps: `npm run install:leaveflow:dashboard`
 - Install all deps: `npm run install:all`
 - Sync common files: `npm run sync:common`
-- Run unified Attendance shell: `npm run dev`
-- Run unified Attendance + LeaveFlow backend: `npm run dev:unified`
-- Run unified Attendance + LeaveFlow backend + LeaveFlow dashboard: `npm run dev:unified:full`
+- Run unified app (one frontend + one backend): `npm run dev`
+- Run legacy Attendance + LeaveFlow backend sidecar: `npm run dev:unified:legacy`
+- Run legacy sidecar + LeaveFlow dashboard: `npm run dev:unified:full`
 - Build unified Attendance shell: `npm run build`
 
 ## Native Leave Migration SQL (run in order)

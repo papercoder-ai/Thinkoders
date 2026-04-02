@@ -5,12 +5,16 @@ import process from "node:process"
 const root = process.cwd()
 const npmCmd = process.platform === "win32" ? "npm.cmd" : "npm"
 
+function needsShell(command) {
+  return process.platform === "win32" && command.toLowerCase().includes("npm")
+}
+
 function printHelp() {
   console.log(`Usage: node scripts/dev-unified.mjs [options]
 
 Options:
-  --with-dashboard   Start LeaveFlow dashboard (Next.js) in addition to Attendance + backend
-  --attendance-only  Start only Attendance shell (still runs sync:common)
+  --with-legacy-leaveflow  Start legacy LeaveFlow backend sidecar with Attendance
+  --with-dashboard         Start LeaveFlow dashboard (requires --with-legacy-leaveflow)
   --help             Show this help message
 `)
 }
@@ -19,7 +23,13 @@ function runSync(command, args, cwd = root) {
   const result = spawnSync(command, args, {
     cwd,
     stdio: "inherit",
+    shell: needsShell(command),
   })
+
+  if (result.error) {
+    console.error(`[unified] Failed to run ${command}: ${result.error.message}`)
+    process.exit(1)
+  }
 
   if (result.status !== 0) {
     process.exit(result.status ?? 1)
@@ -57,8 +67,13 @@ if (args.has("--help")) {
   process.exit(0)
 }
 
-const attendanceOnly = args.has("--attendance-only")
+const withLegacyLeaveflow = args.has("--with-legacy-leaveflow")
 const withDashboard = args.has("--with-dashboard")
+
+if (withDashboard && !withLegacyLeaveflow) {
+  console.error("[unified] --with-dashboard requires --with-legacy-leaveflow")
+  process.exit(1)
+}
 
 console.log("[unified] Syncing root common files...")
 runSync(npmCmd, ["run", "sync:common"])
@@ -70,7 +85,7 @@ function start(name, command, commandArgs, cwd = root) {
   const child = spawn(command, commandArgs, {
     cwd,
     stdio: "inherit",
-    shell: false,
+    shell: needsShell(command),
   })
 
   child.on("exit", (code, signal) => {
@@ -101,7 +116,7 @@ process.on("SIGTERM", () => shutdown(0))
 
 start("attendance", npmCmd, ["--prefix", "Attendace_system-main", "run", "dev"], root)
 
-if (!attendanceOnly) {
+if (withLegacyLeaveflow) {
   const python = resolvePython()
   start(
     "leaveflow-backend",

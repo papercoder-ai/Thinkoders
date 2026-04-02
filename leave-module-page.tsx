@@ -1,21 +1,21 @@
 export const LEAVE_MODULE_OVERVIEW = {
-  title: "Attendance + LeaveFlow Integration",
-  subtitle: "LeaveFlow is reachable through unified Attendance API routes.",
-  bridgeHealthPath: "GET /api/leave/health",
-  webhookNote: "Route via LeaveFlow backend while Attendance remains primary shell",
+  title: "Attendance Leave Module (Unified)",
+  subtitle: "Leave management now runs natively on Attendance backend and Supabase.",
+  bridgeHealthPath: "GET /api/leave/health (native)",
+  webhookNote: "WhatsApp leave handling is served through Attendance backend APIs",
 }
 
 export const LEAVE_MODULE_CARDS = [
   {
-    title: "API Proxy Live",
-    description: "Attendance now exposes LeaveFlow APIs from one domain and one session context.",
+    title: "Single Backend Active",
+    description: "All supported leave APIs are served by Attendance Next.js route handlers.",
   },
   {
-    title: "Safe Migration",
-    description: "Existing Attendance flows stay unchanged while Leave features are progressively moved in.",
+    title: "Single Database Active",
+    description: "Leave data is stored in Supabase PostgreSQL under Attendance-managed schema.",
   },
   {
-    title: "Next Step",
-    description: "Add unified leave pages for requests, approvals, and balances.",
+    title: "Run Everything",
+    description: "Start unified app from root with one frontend and one backend runtime.",
   },
 ]
